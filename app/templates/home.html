@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FinSavvy – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to our home page CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+  <header class="hero-header">
+    <div class="container">
+      <div class="header-top">
+        <h1 class="logo"><a class="navbar-brand" style="text-decoration: none;" href="/">FinSavvy</a></h1>
+
+        <!-- Hamburger Button -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+
+        <nav class="nav" id="navMenu">
+          <a href="{{ url_for('main.home') }}">Home</a>
+          <a href="{{ url_for('main.about') }}">About Us</a>
+          <a href="{{ url_for('main.contact') }}">Contact Us</a>
+          <a href="{{ url_for('dashboard.dashboard') }}">Dashboard</a>
+          <a href="{{ url_for('auth.login') }}" class="btn btn-outline">Login</a>
+          <a href="{{ url_for('auth.register') }}" class="btn btn-primary">Register</a>
+        </nav>
+      </div>
+
+      <div class="hero-text">
+        <h2>Smart AI-Powered Personal Finance Manager</h2>
+        <p>Track, predict, and improve your finances with real-time insights, budget tools, and AI-driven tips.</p>
+        <a href="{{ url_for('auth.register') }}" class="btn btn-cta">Get Started – It’s Free</a>
+      </div>
+
+      <div class="hero-image">
+        <img src="{{ url_for('static', filename='assets/icon.png') }}" alt="Finance illustration">
+      </div>
+    </div>
+  </header>
+
+  <section class="features container">
+    <h3>Key Features</h3>
+    <div class="feature-list">
+      <div class="feature-item">
+        <img src="{{ url_for('static', filename='assets/icon-dashboard.svg') }}" alt="Dashboard">
+        <h4>Interactive Dashboard</h4>
+        <p>Visualize spending habits with charts and graphs for deeper insights.</p>
+      </div>
+      <div class="feature-item">
+        <img src="{{ url_for('static', filename='assets/icon-ai.svg') }}" alt="AI Insights">
+        <h4>AI-Driven Insights</h4>
+        <p>Get personalized tips to reduce overspending and boost savings.</p>
+      </div>
+      <div class="feature-item">
+        <img src="{{ url_for('static', filename='assets/icon-budget.svg') }}" alt="Budget Planner">
+        <h4>Budget Planner</h4>
+        <p>Set limits, receive alerts, and stay on track with your financial goals.</p>
+      </div>
+      <div class="feature-item">
+        <img src="{{ url_for('static', filename='assets/icon-security.svg') }}" alt="Security">
+        <h4>Secure & Private</h4>
+        <p>Your data is stored safely with industry-standard encryption.</p>
+      </div>
+    </div>
+  </section>
+  <section class="stats container">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <h4>10 K+</h4>
+      <p>Active Users</p>
+    </div>
+    <div class="stat-item">
+      <h4>₹50 Cr+</h4>
+      <p>Total Tracked</p>
+    </div>
+    <div class="stat-item">
+      <h4>5 Lac+</h4>
+      <p>Budgets Created</p>
+    </div>
+    <div class="stat-item">
+      <h4>98%</h4>
+      <p>User Satisfaction</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Replaced Pricing with Resources & Insights -->
+  <section class="resources container">
+    <h3>Resources &amp; Insights</h3>
+    <p>Deepen your financial knowledge with expert articles, downloadable guides, and success stories.</p>
+    <div class="resource-cards">
+      <div class="card">
+        <img src="{{ url_for('static', filename='assets/guide.svg') }}" alt="Downloadable Guide">
+        <h4>Ultimate Budgeting Guide</h4>
+        <p>Download our free 20-page PDF to master the 50/20/30 budgeting rule.</p>
+        <a href="{{ url_for('static', filename='guides/budgeting-guide.pdf') }}" class="btn btn-outline" target="_blank">Download Guide</a>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='assets/blog.svg') }}" alt="Blog Article">
+        <h4>Top 10 Saving Strategies</h4>
+        <p>Read our latest blog post on small changes that can save you thousands.</p>
+        <a href="{{ url_for('main.blog_post', slug='top-10-saving-strategies') }}" class="btn btn-outline">Read Article</a>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='assets/case-study.svg') }}" alt="Case Study">
+        <h4>Startup Success Story</h4>
+        <p>See how Acme Co. reduced burn rate by 25% using FinSavvy’s AI forecasts.</p>
+        <a href="{{ url_for('main.case_study', id=3) }}" class="btn btn-outline">View Case Study</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials container">
+    <h3>What Our Users Are Saying</h3>
+    <div class="testimonial-list">
+      <div class="testimonial-item">
+        <img src="{{ url_for('static', filename='assets/team3.jpg') }}" alt="Jane Doe" width="80" height="80">
+        <blockquote>“FinSavvy’s AI tips helped me save over 20% on my monthly expenses. The dashboard is so intuitive!”</blockquote>
+        <p class="reviewer">— Jane Doe, Freelancer</p>
+      </div>
+      <div class="testimonial-item">
+        <img src="{{ url_for('static', filename='assets/team2.jpg') }}" alt="John Smith" width="80" height="80">
+        <blockquote>“I love the budget alerts. No more overdraft fees for me—highly recommend!”</blockquote>
+        <p class="reviewer">— John Smith, Small Business Owner</p>
+      </div>
+      <div class="testimonial-item">
+        <img src="{{ url_for('static', filename='assets/team1.jpg') }}" alt="Maria Garcia" width="80" height="80">
+        <blockquote>“The forecasting feature gave me confidence to invest extra every month. Fantastic tool!”</blockquote>
+        <p class="reviewer">— Maria Garcia, Teacher</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works container">
+    <h3>How FinSavvy Works</h3>
+    <ol>
+      <li>
+        <strong>Connect Your Accounts</strong><br>
+        Securely link your bank accounts and credit cards for automatic transaction syncing.
+      </li>
+      <li>
+        <strong>Track Your Spending</strong><br>
+        See where your money goes each month with detailed categorization and real-time updates.
+      </li>
+      <li>
+        <strong>Set Budgets &amp; Goals</strong><br>
+        Create budgets for different categories and receive smart alerts to stay within limits.
+      </li>
+      <li>
+        <strong>Get AI Tips &amp; Forecasts</strong><br>
+        Benefit from AI-driven spending tips, savings forecasts, and investment suggestions tailored to you.
+      </li>
+    </ol>
+  </section>
+
+<section class="faq container">
+  <h3>Frequently Asked Questions</h3>
+
+  <div class="faq-item">
+    <h4>Is FinSavvy really free?</h4>
+    <p>Yes! Our Basic plan is 100% free—no credit card required. You only pay if you choose to upgrade for Pro features.</p>
+  </div>
+   <div class="faq-item">
+    <h4>Can I access FinSavvy on multiple devices?</h4>
+    <p>Yes! You can log in to your FinSavvy account from any device with internet access, and your data will stay synchronized.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>How secure is my data?</h4>
+    <p>We use industry-standard AES-256 encryption and secure backups. Your data is yours alone.</p>
+  </div>
+  <div class="faq-item">
+    <h4>What if I forget my password?</h4>
+    <p>No worries! Use the “Forgot Password” link on the login page to reset your password securely via email.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>Can I sync FinSavvy with my bank account?</h4>
+    <p>No, currently FinSavvy does not support direct bank account syncing. However, you can manually input transactions and track your expenses easily.</p>
+  </div>
+</section>
+
+<section class="about container">
+  <h3>Why Choose FinSavvy?</h3>
+  <p>FinSavvy combines powerful AI algorithms with an intuitive interface to help you gain full control over your finances. Whether you’re saving for a big purchase or just want to track daily expenses, FinSavvy has you covered.</p>
+</section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 FinSavvy. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="{{ url_for('auth.login') }}">Login</a>
+        <a href="{{ url_for('auth.register') }}">Register</a>
+        <a href="{{ url_for('main.home') }}">Home</a>
+        <a href="{{ url_for('main.terms') }}">Terms of Service</a>
+        <a href="{{ url_for('main.privacy') }}">Privacy Policy</a>
+      </nav>
+      <div class="social">
+        <a href="#"><img src="{{ url_for('static', filename='assets/icon-facebook.svg') }}" alt="Facebook"></a>
+        <a href="#"><img src="{{ url_for('static', filename='assets/icon-twitter.svg') }}" alt="Twitter"></a>
+        <a href="#"><img src="{{ url_for('static', filename='assets/icon-linkedin.svg') }}" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.innerHTML = navMenu.classList.contains('active') ? '&times;' : '&#9776;';
+      document.body.classList.toggle('nav-open');
+    });
+    document.body.addEventListener('click', e => {
+      if (document.body.classList.contains('nav-open')
+          && !navMenu.contains(e.target)
+          && e.target !== hamburger) {
+        navMenu.classList.remove('active');
+        hamburger.innerHTML = '&#9776;';
+        document.body.classList.remove('nav-open');
+      }
+    });
+    document.querySelectorAll('.faq-item h4').forEach(heading => {
+      heading.addEventListener('click', () => {
+        const item   = heading.parentElement;
+        const answer = item.querySelector('p');
+        item.classList.toggle('active');
+        answer.style.maxHeight = item.classList.contains('active')
+          ? answer.scrollHeight + 'px'
+          : '0';
+      });
+    });
+  </script>
+</body>
+</html>

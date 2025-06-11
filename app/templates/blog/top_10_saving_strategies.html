@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block title %}Top 10 Saving Strategies - FinSavvy{% endblock %}
+
+{% block content %}
+<div class="blog-container">
+  <div class="blog-header">
+    <h1>Top 10 Saving Strategies</h1>
+    <p class="blog-subtitle">Simple, proven habits to help you save more each month and reach your financial goals faster.</p>
+    <img src="{{ url_for('static', filename='assets/blog.svg') }}" alt="Top 10 Saving Strategies" class="blog-banner">
+  </div>
+
+  <div class="blog-content">
+    <ol>
+      <li>
+        <strong>Track Your Expenses:</strong>
+        <p>Awareness is the first step to financial control. Log every expense—big or small—using FinSavvy’s transaction tool. It helps you detect spending patterns and cut down on unnecessary costs. Over time, you'll notice which categories dominate your spending and can make more conscious decisions.</p>
+      </li>
+
+      <li>
+        <strong>Follow the 50-20-20-10 Rule:</strong>
+        <p>This powerful budgeting framework allocates your income wisely: 50% for needs (rent, bills), 20% for wants (leisure, shopping), 20% for savings, and 10% for investments. FinSavvy's budgeting dashboard makes it easy to follow this strategy with visual progress indicators for each segment.</p>
+      </li>
+
+      <li>
+        <strong>Automate Your Savings:</strong>
+        <p>Set up automatic transfers to your savings account every payday. This "pay yourself first" method ensures you're saving without relying on discipline. FinSavvy can track these savings to show you cumulative growth over months and years.</p>
+      </li>
+
+      <li>
+        <strong>Cut Unused Subscriptions:</strong>
+        <p>Audit your bank statements for recurring payments you may have forgotten about—streaming, gym, apps. Cancel anything you don’t use regularly. You’d be surprised how small cuts can save ₹1,000–₹3,000 a month.</p>
+      </li>
+
+      <li>
+        <strong>Buy Generic Instead of Name Brands:</strong>
+        <p>Whether it’s groceries or medication, store brands often match quality while costing significantly less. Over time, this habit can lead to thousands in annual savings—without sacrificing quality.</p>
+      </li>
+
+      <li>
+        <strong>Meal Plan Weekly:</strong>
+        <p>Take 30 minutes each weekend to plan your meals. This reduces impulsive dining out and food waste. Batch cooking and reusing ingredients across recipes can cut your grocery bill by 20% or more.</p>
+      </li>
+
+      <li>
+        <strong>Use Cashback & Reward Apps:</strong>
+        <p>Make your purchases work for you. FinSavvy recommends integrating with reward apps that give cashback for purchases you already make—groceries, fuel, and online shopping.</p>
+      </li>
+
+      <li>
+        <strong>DIY When Possible:</strong>
+        <p>From home repairs to homemade gifts, doing it yourself not only saves money but builds valuable life skills. Use YouTube or blog tutorials to learn basic tasks that would otherwise require paid services.</p>
+      </li>
+
+      <li>
+        <strong>Set Monthly Savings Goals:</strong>
+        <p>Set realistic, time-bound goals like "Save ₹5,000 this month" or "Cut food delivery to twice a week." Use FinSavvy’s AI to get suggestions and monitor your progress visually.</p>
+      </li>
+
+      <li>
+        <strong>Review and Reflect Monthly:</strong>
+        <p>Financial habits improve through regular review. Use FinSavvy’s dashboard each month to analyze your budgets, spending trends, and AI insights. Make small tweaks based on what worked and what didn’t.</p>
+      </li>
+    </ol>
+
+    <hr>
+
+    <div class="blog-footer">
+      <h3>Final Thoughts</h3>
+      <p>Saving money doesn’t have to mean sacrificing enjoyment. With a smart plan, the right tools, and consistent habits, you can build financial security while still living your life. These ten strategies are not just tips—they're a foundation. Stick with them, and future-you will thank you.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

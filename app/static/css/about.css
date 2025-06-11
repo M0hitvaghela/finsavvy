@@ -1,0 +1,130 @@
+:root {
+  --primary: #007bff;
+  --primary-dark: #0056b3;
+  --light-bg: #f8f9fa;
+  --text-dark: #222;
+  --gray: #6c757d;
+  --bg-footer: #222;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background-color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+/* Header */
+.page-header {
+  background: var(--light-bg);
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+}
+.page-header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav a {
+  margin-left: 1.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+.nav a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Page Content */
+.page-content {
+  margin-top: 2rem;
+}
+.page-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+.page-content p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: var(--gray);
+}
+.page-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+.page-content li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+/* Footer */
+.footer {
+  background: var(--bg-footer);
+  color: #ddd;
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 3rem;
+}
+.footer-nav a {
+  margin: 0 0.7rem;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+.footer-nav a:hover {
+  color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    margin-top: 1rem;
+  }
+
+  .nav a {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  .page-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .page-content p, .page-content li {
+    font-size: 1rem;
+  }
+}

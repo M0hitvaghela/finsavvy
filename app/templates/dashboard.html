@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard – FinSavvy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+  <h1 class="logo">FinSavvy</h1>
+
+  <!-- Hamburger button (hidden on desktop) -->
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <!-- simple three-bar icon -->
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav class="nav-links">
+    <span class="welcome">Welcome, {{ name }}!</span>
+    <a href="{{ url_for('tx.add_transaction') }}" class="btn btn-sm primary">+ Add Tx</a>
+    <a href="{{ url_for('budgets.manage_budgets') }}" class="btn btn-sm secondary">Budgets</a>
+    <a href="{{ url_for('profile.update_income') }}" class="btn btn-sm">Update Income</a>
+      <a href="{{ url_for('goals.list_goals') }}" class="btn btn-sm btn-outline mt-2">Manage Goals</a>
+    <a href="{{ url_for('reports.generate_pdf_report') }}" class="btn btn-sm">📄 Download PDF</a>
+    <a href="{{ url_for('auth.logout') }}" class="btn btn-sm danger">Logout</a>
+  </nav>
+</header>
+
+
+  {% if banner %}
+  <div class="alert-banner">
+    ⚠️ {{ banner.pct }}% of your <strong>{{ banner.category }}</strong> budget used!
+  </div>
+  {% endif %}
+
+  <main class="dashboard-grid">
+    <!-- AI Insight -->
+    <section class="card full-width">
+      <h2>AI Insight</h2>
+      <p class="insight">
+        Based on your past {{ context_months }} months of spending,<br>
+        we predict <strong>₹{{ predicted_spend }}</strong> next month  
+        <small>(₹{{ pred_range[0] }} – ₹{{ pred_range[1] }})</small>.
+      </p>
+      {% if over %}
+      <p class="tip">
+        💡 You’re ₹{{ '%.2f'|format(over.over_amt) }} over on <strong>{{ over.category }}</strong>.<br>
+        Consider reducing this to stay under ₹{{ '%.2f'|format(over.limit) }}.
+      </p>
+      {% else %}
+      <p class="tip">✅ Great job! You're within all budgets.</p>
+      {% endif %}
+      <div class="updated">Last updated: {{ last_updated }}</div>
+    </section>
+
+    <!-- Monthly Spend Chart -->
+    <section class="card">
+      <h2>Monthly Spend</h2>
+      <div class="chart-container">
+        <canvas id="expenseChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Budget Status with progress bars -->
+    <section class="card card-budget">
+      <h2>Budget Status</h2>
+      <ul class="budget-list">
+        {% for b in budgets %}
+        {% set pct = (spent[b.category] / b.limit_amount * 100) if b.limit_amount else 0 %}
+        <li class="budget-item {% if pct>100 %}over{% elif pct>75 %}warn{% endif %}">
+          <div class="budget-label">{{ b.category.title() }}</div>
+          <div class="budget-amounts">
+            ₹{{ '%.2f'|format(spent[b.category] or 0) }} / ₹{{ '%.2f'|format(b.limit_amount) }}
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:{{ pct|round(0) }}%"></div>
+          </div>
+        </li>
+        {% else %}
+          <li>No budgets set yet.</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <!-- Recent Transactions -->
+    <section class="card full-width">
+      <h2>Recent Transactions</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Date</th><th>Description</th><th>Category</th><th>Amount</th></tr>
+          </thead>
+          <tbody>
+            {% for t in recent_tx %}
+            <tr>
+              <td>{{ t.date }}</td>
+              <td>{{ t.description }}</td>
+              <td>{{ t.category.title() }}</td>
+              <td>₹{{ '%.2f'|format(t.amount) }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="4">No transactions found.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card mt-4">
+  <h2>📊 Financial Health Tips</h2>
+  <ul class="tips-list">
+    {% for tip in fin_tips %}
+      <li>💡 {{ tip }}</li>
+    {% endfor %}
+  </ul>
+</section>
+<section class="card mt-4">
+  <h2>✅ Pros & ⚠️ Cons</h2>
+  <div class="grid-2col">
+    <div>
+      <!-- <h3>✅ Pros</h3> -->
+      {% if pros %}
+        <ul class="tips-list">
+          {% for item in pros %}
+            <li>🌟 {{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No specific strengths found yet. Keep building good habits!</p>
+      {% endif %}
+    </div>
+    <div>
+      <!-- <h3>⚠️ Cons</h3> -->
+      {% if cons %}
+        <ul class="tips-list">
+          {% for item in cons %}
+            <li>⚠️ {{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>Awesome! No critical issues detected in your financial data.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="card mt-4">
+  <h2>📈 Investment Growth Projection</h2>
+  <p>Your current savings: <strong>₹{{ current_savings }}</strong></p>
+  <p>Assuming a consistent 12% annual growth rate:</p>
+
+  <table>
+    <thead>
+      <tr><th>Year</th><th>Projected Value (₹)</th></tr>
+    </thead>
+    <tbody>
+      {% for p in projections %}
+      <tr>
+        <td>{{ p.year }}</td>
+        <td>₹{{ p.value }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% if financially_free %}
+  <p style="color:green; font-weight:bold;">
+    🎉 Congratulations! Your current savings could support your financial freedom based on the 25x monthly expenses rule.
+  </p>
+  {% elif required_savings %}
+  <p style="color:#b36b00; font-weight:bold;">
+    Your target for financial freedom is ₹{{ required_savings }} (25× your monthly expenses).
+    Keep investing and growing your savings to reach this goal!
+  </p>
+  {% endif %}
+</section>
+
+
+{% if trade_deficit %}
+<div id="deficit-warning" style="background:#ffcccc; color:#900; padding:10px; text-align:center;">
+  ⚠️ Your expenses (₹{{ total_expense | round(2) }}) exceed your income (₹{{ income | round(2) }}). You are in a trade deficit. Please control your expenses.
+</div>
+
+<script>
+  window.onload = function() {
+    alert("Warning! Your expenses exceed your income. Please control your spending to avoid financial trouble.");
+  };
+</script>
+{% endif %}
+
+
+
+  </main>
+
+  <script>
+    const labels = {{ week_labels|tojson }};
+    const data   = {{ week_sums|tojson }};
+    const ctx    = document.getElementById('expenseChart').getContext('2d');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: { labels, datasets:[{
+        label: 'Spend (₹)',
+        data,
+        backgroundColor: 'rgba(0,123,255,0.5)',
+        borderColor: 'rgba(0,123,255,1)',
+        borderWidth: 1
+      }]},
+      options:{ responsive:true, maintainAspectRatio:false }
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav    = document.querySelector('.nav-links');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    // Optional: close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
+  });
+  </script>
+</body>
+</html>

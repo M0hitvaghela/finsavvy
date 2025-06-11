@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Privacy Policy – FinSavvy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/privacy.css') }}" />
+</head>
+<body>
+  <header class="page-header">
+    <div class="container nav-container">
+      <h1 class="logo">FinSavvy</h1>
+      <nav class="nav">
+        <a href="{{ url_for('main.home') }}">Home</a>
+        <a href="{{ url_for('main.terms') }}">Terms of Service</a>
+        <a href="{{ url_for('main.privacy') }}" class="active">Privacy Policy</a>
+        <a href="{{ url_for('auth.login') }}">Login</a>
+        <a href="{{ url_for('auth.register') }}">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <h2>Privacy Policy</h2>
+    <p>At FinSavvy, your privacy is our priority. This Privacy Policy explains how we collect, use, and protect your personal information when you use our services.</p>
+
+    <h3>1. Information We Collect</h3>
+    <p>We collect various types of information to provide and improve our services:</p>
+    <ul>
+      <li><strong>Personal Information:</strong> such as your name, email address, phone number, and financial data you provide during registration or transactions.</li>
+      <li><strong>Usage Data:</strong> details about how you use our services, including pages visited, time spent, and actions taken.</li>
+      <li><strong>Device Information:</strong> data about the devices you use to access our services, including IP addresses, browser type, and operating system.</li>
+      <li><strong>Cookies and Tracking Technologies:</strong> small data files stored on your device to help personalize your experience and analyze traffic.</li>
+    </ul>
+
+    <h3>2. How We Use Your Information</h3>
+    <p>Your information is used to:</p>
+    <ul>
+      <li>Provide, operate, and maintain the FinSavvy platform.</li>
+      <li>Improve and personalize your user experience.</li>
+      <li>Communicate important updates, offers, and notifications.</li>
+      <li>Prevent fraudulent activities and enhance security.</li>
+      <li>Comply with legal obligations.</li>
+    </ul>
+
+    <h3>3. Data Security</h3>
+    <p>We take your data security seriously and implement technical and organizational measures including:</p>
+    <ul>
+      <li>Encryption of sensitive data during transmission and storage.</li>
+      <li>Regular security audits and vulnerability assessments.</li>
+      <li>Access controls to restrict data access to authorized personnel only.</li>
+      <li>Continuous monitoring for unusual or suspicious activities.</li>
+    </ul>
+
+    <h3>4. Cookies and Tracking Technologies</h3>
+    <p>Our website uses cookies and similar technologies to enhance your experience. Cookies help us remember your preferences, enable essential site functionality, and gather analytics to improve our services.</p>
+    <p>You can manage cookie preferences through your browser settings. Please note that disabling cookies may affect some features of our website.</p>
+
+    <h3>5. Sharing Your Information</h3>
+    <p>We do not sell your personal information. However, we may share your data with trusted third parties in the following situations:</p>
+    <ul>
+      <li>With service providers who assist us in operating our services, under strict confidentiality agreements.</li>
+      <li>To comply with legal requirements, such as responding to lawful requests or court orders.</li>
+      <li>To protect the rights, safety, or property of FinSavvy, our users, or others.</li>
+    </ul>
+
+    <h3>6. Your Rights</h3>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Access the personal data we hold about you.</li>
+      <li>Request correction of inaccurate or incomplete information.</li>
+      <li>Request deletion of your personal data, subject to legal obligations.</li>
+      <li>Withdraw consent to data processing where applicable.</li>
+      <li>Object to certain data processing activities.</li>
+      <li>Request data portability to transfer your information to another service.</li>
+    </ul>
+    <p>To exercise these rights, please contact our support team at <a href="mailto:support@finsavvy.com">support@finsavvy.com</a>.</p>
+
+    <h3>7. Data Retention</h3>
+    <p>We retain your personal information only as long as necessary to provide services, comply with legal obligations, resolve disputes, and enforce agreements.</p>
+
+    <h3>8. Children’s Privacy</h3>
+    <p>FinSavvy’s services are not intended for individuals under the age of 13. We do not knowingly collect personal data from children under 13. If we learn that we have collected such data, we will delete it promptly.</p>
+
+    <h3>9. International Users</h3>
+    <p>Your information may be processed and stored in countries outside of your residence. By using our services, you consent to this transfer and processing.</p>
+
+    <h3>10. Changes to This Privacy Policy</h3>
+    <p>We may update this Privacy Policy occasionally to reflect changes in practices or legal requirements. We encourage you to review this page periodically.</p>
+    <p>Continued use of FinSavvy after any updates constitutes acceptance of the revised policy.</p>
+
+    <h3>11. Contact Us</h3>
+    <p>If you have questions or concerns regarding this Privacy Policy, please contact us at:</p>
+    <address>
+      Email: <a href="mailto:support@finsavvy.com">support@finsavvy.com</a><br />
+      Address: 123 Finance Ave, Money City, Country<br />
+      Phone: +1 (555) 123-4567
+    </address>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 FinSavvy. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="{{ url_for('main.home') }}">Home</a>
+        <a href="{{ url_for('main.terms') }}">Terms of Service</a>
+        <a href="{{ url_for('main.privacy') }}" class="active">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

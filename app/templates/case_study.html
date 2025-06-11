@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block title %}Startup Success Story - FinSavvy{% endblock %}
+
+{% block content %}
+<div class="story-container">
+  <div class="story-header">
+    <h1>Startup Success Story: Acme Co.</h1>
+    <p class="story-subtitle">How Acme Co. reduced burn rate by 25% using FinSavvy’s AI forecasts.</p>
+    <img src="{{ url_for('static', filename='assets/case-study.svg') }}" alt="Startup Success Story" class="story-banner">
+  </div>
+
+  <div class="story-content">
+    <h2>Case Study Overview</h2>
+    <p>Acme Co., a fast-growing startup, successfully reduced its burn rate by 25% by leveraging FinSavvy’s advanced AI forecasts. This allowed better cash flow management and strategic budgeting, accelerating their path to profitability.</p>
+
+    <h2>Key Highlights</h2>
+    <ul>
+      <li>Real-time budget tracking enabled quick cost-cutting decisions</li>
+      <li>AI prediction identified overspending categories</li>
+      <li>Custom alerts helped maintain financial discipline</li>
+      <li>Improved investor confidence with transparent financial reporting</li>
+    </ul>
+
+    <h2>Background</h2>
+    <p>Acme Co., a growing startup in the tech space, was facing a common challenge: a high burn rate threatening their runway and future growth. Despite a strong product-market fit, they struggled to manage expenses efficiently.</p>
+
+    <h2>Challenges</h2>
+    <ul>
+      <li>Unpredictable cash flow leading to last-minute budget cuts.</li>
+      <li>Difficulty identifying key cost drivers within operational expenses.</li>
+      <li>Lack of clear forecasting tools for financial planning.</li>
+    </ul>
+
+    <h2>Our Approach</h2>
+    <p>FinSavvy partnered with Acme Co. to implement AI-driven financial forecasting. By analyzing historical spending data and market trends, FinSavvy's tools generated actionable insights to optimize cash flow.</p>
+
+    <h3>Key Initiatives</h3>
+    <ol>
+      <li><strong>Automated Expense Tracking:</strong> Integration with Acme’s accounting software to monitor real-time spending.</li>
+      <li><strong>AI Forecast Modeling:</strong> Simulating various budget scenarios to forecast burn rate under different conditions.</li>
+      <li><strong>Cost Reduction Plans:</strong> Highlighting areas to reduce overhead costs without impacting core business operations.</li>
+    </ol>
+
+    <h2>Results</h2>
+    <p>Within 3 months, Acme Co. achieved:</p>
+    <ul>
+      <li>25% reduction in monthly burn rate.</li>
+      <li>Extended runway by 6 months, allowing more time for product development and fundraising.</li>
+      <li>Improved financial visibility, empowering better decision-making.</li>
+    </ul>
+
+    <h2>Client Testimonial</h2>
+    <blockquote>
+      <p>"FinSavvy's forecasting tools gave us the clarity we desperately needed. Their AI insights transformed how we manage our finances and helped us focus on growth with confidence."</p>
+      <footer>— CEO, Acme Co.</footer>
+    </blockquote>
+
+    <hr>
+
+    <div class="story-footer">
+      <h3>Want to learn more?</h3>
+      <p>Discover how FinSavvy can empower your business with smarter financial planning!</p>
+      <p>Explore more case studies or <a href="{{ url_for('main.contact') }}">contact us</a> to see how FinSavvy can help your startup thrive.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

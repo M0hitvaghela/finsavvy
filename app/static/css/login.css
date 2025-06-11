@@ -1,0 +1,53 @@
+.how-it-works {
+  background: #f9faff;
+  border-radius: 10px;
+  padding: 30px 40px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.how-it-works h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.how-it-works ol {
+  list-style: decimal inside;
+  padding-left: 0;
+  margin: 0;
+}
+
+.how-it-works ol li {
+  margin-bottom: 22px;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #444;
+  position: relative;
+  padding-left: 8px;
+}
+
+.how-it-works ol li strong {
+  display: block;
+  font-size: 1.15rem;
+  color: #1a73e8;
+  margin-bottom: 6px;
+}
+
+.how-it-works ol li:last-child {
+  margin-bottom: 0;
+}
+
+/* Optional: hover effect on each step */
+.how-it-works ol li:hover {
+  background-color: #e6f0ff;
+  border-radius: 5px;
+  padding-left: 10px;
+  transition: background-color 0.3s ease;
+}

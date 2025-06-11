@@ -1,0 +1,126 @@
+/* style-transaction.css for Add Transaction – FinSavvy */
+
+/* Reuse your existing CSS variables or redefine here */
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --bg-light: #f9fafb;
+  --text-dark: #111827;
+  --text-light: #6b7280;
+  --border-radius: 0.5rem;
+  --spacing: 1rem;
+}
+
+/* Global reset + typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: #fff;
+  padding: var(--spacing) 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h1 {
+  font-size: 1.75rem;
+}
+.header nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Flash messages */
+.flash-messages {
+  max-width: 600px;
+  margin: var(--spacing) auto;
+  list-style: none;
+}
+.flash-messages li {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+}
+
+/* Form card */
+.form-card {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: grid;
+  gap: var(--spacing);
+}
+.form-card label {
+  display: block;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+.form-card input,
+.form-card datalist {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing);
+}
+.form-card input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(79,70,229,0.2);
+}
+
+/* Submit button */
+.form-card button {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  justify-self: start;
+}
+.form-card button:hover {
+  background: var(--primary-hover);
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .header nav {
+    margin-top: 0.5rem;
+  }
+  .form-card {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}

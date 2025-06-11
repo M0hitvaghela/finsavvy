@@ -1,0 +1,671 @@
+:root {
+  --primary: #0066ff;
+  --primary-dark: #0044cc;
+  --accent: #00c896;
+  --light-bg: #f4f7fa;
+  --text-dark: #1a1a1a;
+  --text-light: #555;
+  --gray: #6c757d;
+  --white: #fff;
+  --border: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.05);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Header & Hero */
+.hero-header {
+  background: var(--light-bg);
+  padding: 3rem 0 2rem;
+  position: relative;
+  box-shadow: 0 4px 8px var(--shadow);
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.nav a:hover {
+  background-color: rgba(0, 102, 255, 0.1);
+  color: var(--primary);
+}
+.nav .btn {
+  padding: 0.5rem 1.2rem;
+}
+
+/* Hero Content */
+.hero-text {
+  max-width: 650px;
+  margin-top: 3rem;
+}
+.hero-text h2 {
+  font-size: 2.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+.hero-image {
+  margin-top: 2rem;
+}
+.hero-image img {
+  width: 100px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-cta {
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Features */
+.features {
+  padding: 4rem 0;
+  text-align: center;
+}
+.features h3 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: var(--primary-dark);
+}
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.feature-item {
+  padding: 1.5rem;
+  background: var(--light-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform 0.3s ease;
+}
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+.feature-item img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+.feature-item h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.feature-item p {
+  color: var(--gray);
+}
+
+/* About */
+.about {
+  background: var(--light-bg);
+  padding: 3rem 0;
+  text-align: center;
+}
+.about h3 {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+.how-it-works {
+  background: #f9faff;
+  border-radius: 10px;
+  padding: 30px 40px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.how-it-works h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.how-it-works ol {
+  list-style: decimal inside;
+  padding-left: 0;
+  margin: 0;
+}
+
+.how-it-works ol li {
+  margin-bottom: 22px;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #444;
+  position: relative;
+  padding-left: 8px;
+}
+
+.how-it-works ol li strong {
+  display: block;
+  font-size: 1.15rem;
+  color: #1a73e8;
+  margin-bottom: 6px;
+}
+
+.how-it-works ol li:last-child {
+  margin-bottom: 0;
+}
+
+/* Optional: hover effect on each step */
+.how-it-works ol li:hover {
+  background-color: #e6f0ff;
+  border-radius: 5px;
+  padding-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.footer-nav {
+  margin-top: 1rem;
+}
+.footer-nav a {
+  color: #ccc;
+  margin: 0 0.75rem;
+  text-decoration: none;
+}
+.footer-nav a:hover {
+  color: #fff;
+}
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Pricing Section */
+.pricing {
+  padding: 4rem 0;
+  text-align: center;
+}
+.pricing h3 {
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.pricing-cards .card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pricing-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px var(--shadow);
+}
+.pricing-cards .card.featured {
+  border-color: var(--primary);
+}
+.pricing-cards .card.featured .price {
+  color: var(--primary);
+}
+.card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.card h4 span {
+  font-size: 0.75rem;
+  color: var(--white);
+  background: var(--accent);
+  padding: 2px 6px;
+  border-radius: 4px;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+}
+.card .price {
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-weight: 700;
+}
+.card .price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-light);
+}
+.card ul {
+  list-style: none;
+  margin: 1rem 0;
+  text-align: left;
+}
+.card ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+.card ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+.card .btn {
+  margin-top: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Testimonials */
+.testimonials {
+  background: var(--light-bg);
+  padding: 4rem 0;
+  text-align: center;
+}
+.testimonials h3 {
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+}
+.testimonial-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+.testimonial-item {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonial-item img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.testimonial-item blockquote {
+  font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+.testimonial-item .reviewer {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* FAQ Accordion */
+.faq {
+  padding: 4rem 0;
+}
+.faq h3 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+}
+.faq-item {
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+.faq-item h4 {
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5rem;
+}
+.faq-item h4::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+.faq-item.active h4::after {
+  content: "–";
+}
+/* Smooth slide toggle for FAQ answers */
+.faq-item p {
+  /* start closed */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+/* when active, we’ll set a large enough max-height */
+.faq-item.active p {
+  /* this needs to be larger than your content height */
+  max-height: 500px; 
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Social Icons in Footer */
+.footer .social {
+  margin-top: 1rem;
+}
+.footer .social a {
+  margin: 0 0.5rem;
+}
+.footer .social img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+.footer .social img:hover {
+  opacity: 1;
+}
+
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-dark);
+  z-index: 1100; /* above sidebar */
+}
+
+/* Nav (desktop) */
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+/* ─── Resources & Insights Section ─────────────────────────────────────────── */
+
+.resources {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.resources h3 {
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.resources p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.resource-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.resource-cards .card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+.resource-cards .card img {
+  width: 48px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.resource-cards .card h4 {
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.75rem;
+}
+
+.resource-cards .card p {
+  flex-grow: 1;
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.resource-cards .card .btn {
+  align-self: start;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+}
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Stats Section */
+.stats {
+  background: var(--light-bg);
+  padding: 3rem 1.5rem;
+  border-radius: 10px;
+  /* margin: 2rem 0; */
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.stat-item h4 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+  line-height: 1;
+}
+
+.stat-item p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+/* Responsive tweak: slightly smaller numbers on very small screens */
+@media (max-width: 480px) {
+  .stat-item h4 {
+    font-size: 1.8rem;
+  }
+  .stats {
+    padding: 2rem 1rem;
+  }
+}
+
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .resources p {
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+  }
+}
+
+/* Sidebar styles for mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -280px; /* hide off screen */
+    height: 100vh;
+    width: 280px;
+    background: var(--white);
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    padding: 4rem 1.5rem 1.5rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    z-index: 1050;
+  }
+
+  /* When sidebar is open */
+  .nav.active {
+    right: 0;
+  }
+
+  /* Nav links full width */
+  .nav a {
+    font-size: 1.2rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  /* Buttons fill width */
+  .btn {
+    display: block;
+    text-align: center;
+  }
+
+  /* Optional: Dim background overlay when nav open */
+  body.nav-open::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1040;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+  .nav {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .nav a {
+    padding: 0.4rem 0.8rem;
+  }
+  .feature-item {
+    padding: 1.2rem;
+  }
+  .hero-image img {
+    width: 80px;
+  }
+}
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .pricing-cards, .testimonial-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .pricing-cards, .testimonial-list {
+    grid-template-columns: 1fr;
+  }
+  .hero-text, .hero-image {
+    text-align: center;
+  }
+  .hero-image {
+    margin-top: 1.5rem;
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Terms of Service – FinSavvy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/privacy.css') }}" />
+</head>
+<body>
+  <header class="page-header">
+    <div class="container nav-container">
+      <h1 class="logo">FinSavvy</h1>
+      <nav class="nav">
+        <a href="{{ url_for('main.home') }}">Home</a>
+        <a href="{{ url_for('main.terms') }}" class="active">Terms of Service</a>
+        <a href="{{ url_for('main.privacy') }}">Privacy Policy</a>
+        <a href="{{ url_for('auth.login') }}">Login</a>
+        <a href="{{ url_for('auth.register') }}">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <h2>Terms of Service</h2>
+
+    <p>Welcome to FinSavvy! These Terms of Service outline the rules and regulations for the use of our website and services.</p>
+
+    <p>By accessing this website, you accept these terms and conditions in full. If you disagree with any part of these terms, please do not use our services.</p>
+
+    <h3>1. Use of Our Service</h3>
+    <p>You agree to use FinSavvy only for lawful purposes and in a way that does not infringe the rights of, restrict or inhibit anyone else's use and enjoyment of the service.</p>
+    <p>Unauthorized use of the website may give rise to a claim for damages and/or be a criminal offense.</p>
+
+    <h3>2. User Responsibilities</h3>
+    <p>Users must provide accurate and up-to-date information when registering or using our services.</p>
+    <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+    <p>Please notify us immediately if you suspect any unauthorized use of your account.</p>
+
+    <h3>3. Intellectual Property</h3>
+    <p>All content on FinSavvy, including text, graphics, logos, software, and other materials, is the property of FinSavvy or its licensors and is protected by copyright, trademark, and other intellectual property laws.</p>
+    <p>You may not reproduce, distribute, or create derivative works from our content without prior written permission.</p>
+
+    <h3>4. Payment and Subscriptions</h3>
+    <p>Some features of FinSavvy may require payment or subscription. All fees are clearly stated on our website.</p>
+    <p>By subscribing, you agree to provide accurate payment information and to keep it updated.</p>
+    <p>Subscriptions automatically renew unless canceled prior to the renewal date.</p>
+
+    <h3>5. Privacy and Data Protection</h3>
+    <p>Your privacy is important to us. Our <a href="{{ url_for('main.privacy') }}">Privacy Policy</a> explains how we collect, use, and protect your personal data.</p>
+    <p>By using our services, you consent to the data practices described in our privacy policy.</p>
+
+    <h3>6. Limitation of Liability</h3>
+    <p>FinSavvy is provided "as is" without warranties of any kind, either express or implied.</p>
+    <p>We do not guarantee that the service will be uninterrupted or error-free.</p>
+    <p>In no event shall FinSavvy be liable for any damages, including indirect, incidental, or consequential damages, arising from your use of the service.</p>
+
+    <h3>7. Termination</h3>
+    <p>We reserve the right to suspend or terminate your access to the service at any time, without prior notice, for violations of these terms or any unlawful behavior.</p>
+    <p>Upon termination, your right to use the service will immediately cease.</p>
+
+    <h3>8. Modifications to Terms</h3>
+    <p>FinSavvy may revise these Terms of Service at any time by updating this page.</p>
+    <p>Your continued use of the service after changes are posted constitutes your acceptance of those changes.</p>
+
+    <h3>9. Governing Law</h3>
+    <p>These terms shall be governed by and construed in accordance with the laws of the jurisdiction where FinSavvy operates.</p>
+    <p>Any disputes arising out of or related to these terms will be subject to the exclusive jurisdiction of the courts in that jurisdiction.</p>
+
+    <h3>10. Contact Information</h3>
+    <p>If you have any questions about these Terms of Service, please contact our support team at <a href="mailto:support@finsavvy.com">support@finsavvy.com</a>.</p>
+
+    <h3>11. Additional Provisions</h3>
+    <p><strong>Force Majeure:</strong> FinSavvy is not liable for any failure or delay in performance due to causes beyond our reasonable control, including natural disasters, government actions, or internet failures.</p>
+
+    <p><strong>Severability:</strong> If any provision of these terms is found to be unenforceable, the remaining provisions will remain in full effect.</p>
+
+    <p><strong>Entire Agreement:</strong> These Terms of Service, along with our Privacy Policy, constitute the entire agreement between you and FinSavvy regarding the use of our services.</p>
+
+    <p><strong>Third-Party Links:</strong> Our service may contain links to third-party websites. We do not endorse or assume responsibility for the content or practices of these sites.</p>
+
+    <p><strong>User Content:</strong> Any content you upload or submit through our services must comply with applicable laws and not infringe on third-party rights.</p>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 FinSavvy. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="{{ url_for('main.home') }}">Home</a>
+        <a href="{{ url_for('main.terms') }}" class="active">Terms of Service</a>
+        <a href="{{ url_for('main.privacy') }}">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

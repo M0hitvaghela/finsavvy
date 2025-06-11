@@ -1,0 +1,65 @@
+<!-- templates/add_transaction.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Add Transaction – FinSavvy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/add_transaction.css') }}" />
+</head>
+<body>
+  <header class="header">
+    <h1>Add Transaction</h1>
+    <nav><a href="{{ url_for('dashboard.dashboard') }}">← Back to Dashboard</a></nav>
+  </header>
+
+  {% with msgs = get_flashed_messages() %}
+    {% if msgs %}
+      <ul class="flash-messages">
+        {% for m in msgs %}
+          <li>{{ m }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <main class="form-card">
+    <form action="{{ url_for('tx.add_transaction') }}" method="POST">
+      <label for="amount">Amount (₹):</label>
+      <input type="number" step="0.01" id="amount" name="amount" required>
+
+      <label for="category">Category:</label>
+      <input list="categories" id="category" name="category" placeholder="Select or type a category" required>
+      <datalist id="categories">
+  <option value="rent / mortgage">
+  <option value="groceries">
+  <option value="utilities">
+  <option value="transportation">
+  <option value="fuel">
+  <option value="insurance">
+  <option value="healthcare">
+  <option value="education">
+  <option value="debt repayment">
+  <option value="savings">
+  <option value="investment">
+  <option value="entertainment">
+  <option value="dining out">
+     <option value="emergency fund"></option>
+  <option value="subscriptions">
+  <option value="charity">
+  <option value="miscellaneous">
+</datalist>
+
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" placeholder="Optional">
+
+      <button type="submit" class="button primary">Add Transaction</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us – FinSavvy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container nav-container">
+      <h1 class="logo"><a class="navbar-brand" href="/">FinSavvy</a></h1>
+      <nav class="nav">
+        <a href="{{ url_for('auth.home') }}">Home</a>
+        <a href="{{ url_for('main.about') }}" class="active">About Us</a>
+        <a href="{{ url_for('main.contact') }}">Contact</a>
+        <a href="{{ url_for('auth.login') }}">Login</a>
+        <a href="{{ url_for('auth.register') }}">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <h2>About FinSavvy</h2>
+    <p>Welcome to <strong>FinSavvy</strong>, your trusted AI-powered personal finance assistant. At FinSavvy, we understand the challenges of managing personal finances in today's complex world, which is why we created a tool to bring clarity, simplicity, and confidence to your financial decisions.</p>
+
+    <h3>Our Mission</h3>
+    <p>To empower everyone to make smart financial decisions through accessible, intelligent, and personalized tools.</p>
+
+    <h3>What We Offer</h3>
+    <ul>
+      <li>AI-driven budget planning and real-time tracking</li>
+      <li>Spending insights powered by machine learning</li>
+      <li>Visual charts and summaries for easy understanding</li>
+      <li>Automatic categorization of your transactions</li>
+      <li>Notifications and tips to reduce overspending</li>
+    </ul>
+
+    <h3>Our Story</h3>
+    <p>FinSavvy was founded in 2025 by a group of passionate developers and financial experts who believed that everyone deserves access to smart financial tools. We aim to reduce the stress and confusion associated with personal finance by delivering intelligent insights in a friendly, human-first design.</p>
+
+    <h3>Why Choose FinSavvy?</h3>
+    <ul>
+      <li><strong>Security First:</strong> Your data is encrypted and protected with industry standards.</li>
+      <li><strong>Easy to Use:</strong> No jargon, just clear financial tracking.</li>
+      <li><strong>Data-Driven:</strong> Receive insights based on your spending behavior.</li>
+    </ul>
+
+    <p>Thousands of users trust FinSavvy to manage their finances every day. Whether you're budgeting for your next big goal or trying to curb unnecessary expenses, FinSavvy is here to help.</p>
+
+    <p><strong>Explore FinSavvy and transform the way you manage money.</strong></p>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 FinSavvy. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="{{ url_for('auth.home') }}">Home</a>
+        <a href="{{ url_for('main.about') }}" class="active">About Us</a>
+        <a href="{{ url_for('main.contact') }}">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

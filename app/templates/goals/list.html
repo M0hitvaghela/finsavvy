@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block title %}Your Goals – FinSavvy{% endblock %}
+{% block content %}
+<div class="container">
+  <h2>Your Savings Goals</h2>
+  <a href="{{ url_for('goals.add_goal') }}" class="btn btn-primary mb-3">+ New Goal</a>
+
+  {% for g in goals %}
+    {% set pct = (g.saved_amount / g.target_amount * 100) if g.target_amount else 0 %}
+    <div class="goal-card">
+      <h4>{{ g.name }}</h4>
+      <p>Target: ₹{{ '%.2f'|format(g.target_amount) }}
+         {% if g.due_date %} by {{ g.due_date }}{% endif %}
+      </p>
+
+      <div class="progress">
+        <div class="progress-bar" role="progressbar"
+             style="width: {{ pct|round(1) }}%; background-color: #3f89d3;">
+          {{ pct|round(1) }}%
+        </div>
+      </div>
+
+      <p>Saved: ₹{{ '%.2f'|format(g.saved_amount) }}
+         / ₹{{ '%.2f'|format(g.target_amount) }}
+      </p>
+
+      <a href="{{ url_for('goals.update_goal', id=g.id) }}" 
+         class="btn btn-sm btn-secondary">Edit</a>
+      <form action="{{ url_for('goals.delete_goal', id=g.id) }}" method="post">
+        <button class="btn btn-sm btn-danger">Delete</button>
+      </form>
+
+      {% if pct >= 100 %}
+        <div class="alert alert-success">
+          🎉 You’ve reached your goal!
+        </div>
+      {% endif %}
+    </div>
+  {% else %}
+    <p>No goals yet. <a href="{{ url_for('goals.add_goal') }}">Create one now</a>.</p>
+  {% endfor %}
+</div>
+{% endblock %}

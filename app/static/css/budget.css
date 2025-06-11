@@ -1,0 +1,142 @@
+/* style.css for Manage Budgets – FinSavvy */
+
+/* CSS Variables */
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --bg-light: #f9fafb;
+  --text-dark: #111827;
+  --text-light: #6b7280;
+  --border-radius: 0.5rem;
+  --spacing: 1rem;
+}
+.header nav a {
+  color: black;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+/* Global Resets */n* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  background-color: white;
+  padding: var(--spacing) 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h1 {
+  font-size: 1.75rem;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-container form {
+  display: grid;
+  gap: var(--spacing);
+}
+
+.form-container label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: var(--text-light);
+}
+
+.form-container input[list],
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container datalist {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.button.primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+.button.primary:hover {
+  background-color: var(--primary-hover);
+}
+
+h3 {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+
+ul {
+  list-style: none;
+  margin-top: var(--spacing);
+}
+ul li {
+  background-color: #fff;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul li::before {
+  content: "•";
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .header nav {
+    margin-top: 0.5rem;
+  }
+  .form-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}

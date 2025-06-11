@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Budgets – FinSavvy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/budget.css') }}">
+</head>
+<body>
+  <header class="header">
+    <h1>Budget Settings</h1>
+    <nav><a href="{{ url_for('dashboard.dashboard') }}">← Back to Dashboard</a></nav>
+  </header>
+
+  <main class="form-container">
+    <h2>Set or Update Budgets</h2>
+    <form method="POST">
+      <label for="category">Category:</label>
+      <input list="categories" id="category" name="category" placeholder="Select or type a category" required>
+      <datalist id="categories">
+  <option value="rent / mortgage">
+  <option value="groceries">
+  <option value="utilities">
+  <option value="transportation">
+     <option value="emergency fund"></option>
+  <option value="fuel">
+  <option value="insurance">
+  <option value="healthcare">
+  <option value="education">
+  <option value="debt repayment">
+  <option value="savings">
+  <option value="investment">
+  <option value="entertainment">
+  <option value="dining out">
+  <option value="subscriptions">
+  <option value="charity">
+  <option value="miscellaneous">
+</datalist>
+
+
+      <label for="limit_amount">Limit Amount (₹):</label>
+      <input type="number" id="limit_amount" name="limit_amount" step="0.01" required>
+
+      <button type="submit" class="button primary">Save Budget</button>
+    </form>
+
+    <h3>Current Budgets</h3>
+    <ul>
+      {% for b in budgets %}
+        <li>{{ b.category }} – ₹{{ '%.2f'|format(b.limit_amount) }}</li>
+      {% endfor %}
+    </ul>
+  </main>
+</body>
+</html>
