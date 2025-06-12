@@ -181,15 +181,15 @@ It follows a modified **50-20-20-7.5-3** budget guideline:
 
 ### Register Page
 
-![Registration Page](https://github.com/M0hitvaghela/finsavvy/blob/main/screenshot/registration.png)
+![Registration Page](https://github.com/M0hitvaghela/finsavvy/blob/main/Screenshot/registration.png)
 
 ### Dashboard Page
 
-![Dashboard Page](https://github.com/M0hitvaghela/finsavvy/blob/main/screenshot/dashboard.png)
+![Dashboard Page](https://github.com/M0hitvaghela/finsavvy/blob/main/Screenshot/dashboard.png)
 
 ### Contact Page
 
-![Contact Page](screenshot/Contact.png)
+![Contact Page](https://github.com/M0hitvaghela/finsavvy/blob/main/Screenshot/contact.png)
 ---
 
 ## Future Improvements
