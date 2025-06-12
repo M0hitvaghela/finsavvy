@@ -173,7 +173,7 @@ It follows a modified **50-20-20-7.5-3** budget guideline:
 
 ### Home Page
 
-![Home Page](screenshot/home_page.png)
+![Home Page](https://github.com/M0hitvaghela/finsavvy/blob/main/screenshot/home_page.png)
 
 ### Login Page
 
@@ -181,11 +181,11 @@ It follows a modified **50-20-20-7.5-3** budget guideline:
 
 ### Register Page
 
-![Registration Page](screenshot/registration.png)
+![Registration Page](https://github.com/M0hitvaghela/finsavvy/blob/main/screenshot/registration.png)
 
 ### Dashboard Page
 
-![Dashboard Page](screenshot/dashboard.png)
+![Dashboard Page](https://github.com/M0hitvaghela/finsavvy/blob/main/screenshot/dashboard.png)
 
 ### Contact Page
 
