@@ -177,7 +177,7 @@ It follows a modified **50-20-20-7.5-3** budget guideline:
 
 ### Login Page
 
-![Login Page](screenshot/login.png)
+![Login Page](https://github.com/M0hitvaghela/finsavvy/blob/main/Screenshot/Login.png)
 
 ### Register Page
 
